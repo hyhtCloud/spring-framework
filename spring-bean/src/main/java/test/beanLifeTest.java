@@ -2,7 +2,7 @@ package test;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import service.BeanService;
+import com.hyht.service.BeanService;
 
 /**
  * @Auther: lqj

@@ -1,4 +1,4 @@
-package service;
+package com.hyht.service;
 
 import org.springframework.beans.factory.InitializingBean;
 

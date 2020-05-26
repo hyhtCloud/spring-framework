@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 1 基本类型值-->
+    <bean id="student" class="entity.Student2">
+        <property name="id" value="1"/>
+        <property name="username" value="张三"/>
+        <property name="age" value="10"/>
+    </bean>
+    <!--2注入bean-->
+    <bean id="dog" class="entity.Dog">
+        <property name="name" value="Jack"/>
+    </bean>
+    <bean id="student2" class="entity.Student2">
+        <property name="id" value="1"/>
+        <property name="username" value="张三"/>
+        <property name="age" value="10"/>
+        <property name="dog" ref="dog"/>
+    </bean>
+
+    <!--3.内部bean-->
+    <bean id="student3" class="entity.Student2">
+        <property name="id" value="1"/>
+        <property name="username" value="张三"/>
+        <property name="age" value="10"/>
+        <property name="dog" >
+            <bean class="entity.Dog">
+                <property name="name" value="Tom"/>
+            </bean>
+        </property>
+    </bean>
+
+    <!--4.null-->
+    <bean id="student4" class="entity.Student2">
+        <property name="id" value="1"/>
+        <property name="username" value="张三"/>
+        <property name="age" value="10"/>
+        <property name="dog" >
+            <null></null>
+        </property>
+    </bean>
+    <!--5.集合-->
+     <bean id="student5" class="entity.Student2">
+        <property name="id" value="1"/>
+        <property name="username" value="张三"/>
+        <property name="age" value="10"/>
+        <property name="dog" ref="dog"/>
+         <property name="hobbies">
+             <list>
+                 <value>看书</value>
+                 <value>写字</value>
+             </list>
+         </property>
+         	<property name="loves">
+			<set>
+				<value>唱歌2</value>
+				<value>跳舞2</value>
+			</set>
+		</property>
+		<property name="works">
+			<map>
+				<entry>
+					<key><value>上午</value></key>
+					<value>写代码</value>
+				</entry>
+				<entry>
+					<key><value>下午</value></key>
+					<value>测试代码</value>
+				</entry>
+			</map>
+		</property>
+		<property name="addresses">
+			<props>
+				<prop key="address1">广州</prop>
+				<prop key="address2">深圳</prop>
+			</props>
+		</property>
+    </bean>
+
+</beans>

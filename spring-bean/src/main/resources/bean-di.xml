@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 1 属性注入-->
+    <bean id="student" class="entity.Student">
+        <property name="id" value="1"/>
+        <property name="username" value="张三"/>
+        <property name="age" value="10" />
+    </bean>
+    <!--构造方法注入（类型，索引，组合使用）-->
+    <!--2.1 构造方法注入(类型)-->
+    <bean id="student2" class="entity.Student">
+        <constructor-arg type="int" value="2"/>
+        <constructor-arg type="String" value="李四"/>
+        <constructor-arg type="int" value="11" />
+    </bean>
+
+    <!--2.2 构造方法注入(索引)-->
+    <bean id="student3" class="entity.Student">
+        <constructor-arg index="0" value="3"/>
+        <constructor-arg index="1" value="王五"/>
+        <constructor-arg index="2" value="12" />
+    </bean>
+    <!--2.3 构造方法注入(组合使用)-->
+    <bean id="student4" class="entity.Student">
+        <constructor-arg type="int" index="0" value="3"/>
+        <constructor-arg type="String" index="1" value="小明"/>
+        <constructor-arg type="int" index="2" value="13"/>
+    </bean>
+
+    <!--工厂方法注入-->
+    <bean id="studentFactory" class="springDI.StudentFactory"/>
+    <bean id="student5" factory-bean="studentFactory" factory-method="creatFactory"/>
+    <!--静态工厂注入-->
+    <bean id="student6" class="springDI.StudentStaticFactory" factory-method="creatStaticFactory"/>
+</beans>
