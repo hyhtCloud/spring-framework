@@ -19,5 +19,6 @@
             <aop:after-returning method="doAfterReturning" pointcut-ref="businessService"></aop:after-returning>
             <aop:after-throwing method="doAfterThrowing" pointcut-ref="businessService" throwing="ex"></aop:after-throwing>
         </aop:aspect>
+
     </aop:config>
 </beans>
