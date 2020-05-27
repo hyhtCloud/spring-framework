@@ -15,9 +15,10 @@ public class AopTest {
     private ApplicationContext applicationContext;
 
     @Test
-    public void test() {
+    public void Test() {
         applicationContext = new ClassPathXmlApplicationContext("bean.xml");
         StudentService studentService = (StudentService) applicationContext.getBean("studentService");
         studentService.addStudent("zhangsan");
     }
+
 }

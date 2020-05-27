@@ -12,8 +12,12 @@
 
     <aop:config>
         <aop:aspect id="studentServiceAspect" ref="studentServiceAspect">
-            <aop:pointcut id="busService" expression="execution(* com.hyht.service.StudentService.*.*(..))"/>
-            <aop:before method="doBefore" pointcut-ref="busService"></aop:before>
+            <aop:pointcut id="businessService" expression="execution(* com.hyht.service.StudentService.*.*(..))"/>
+            <aop:before method="doBefore" pointcut-ref="businessService"></aop:before>
+            <aop:after method="doAfter" pointcut-ref="businessService"></aop:after>
+            <aop:around method="doAround" pointcut-ref="businessService"></aop:around>
+            <aop:after-returning method="doAfterReturning" pointcut-ref="businessService"></aop:after-returning>
+            <aop:after-throwing method="doAfterThrowing" pointcut-ref="businessService" throwing="ex"></aop:after-throwing>
         </aop:aspect>
     </aop:config>
 </beans>
