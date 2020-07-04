@@ -5,12 +5,12 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-<!--    <bean id="student" class="entity.Student" >-->
-<!--        <property name="id" value="1"/>-->
-<!--        <property name="username" value="zhangsan"/>-->
-<!--    </bean>-->
+    <bean id="student" class="entity.Student" >
+        <property name="id" value="1"/>
+        <property name="username" value="zhangsan"/>
+    </bean>
 
-<!--    <bean id="beanservice" class="BeanService">-->
+    <bean id="beanservice" class="com.hyht.service.BeanService">
 
-<!--    </bean>-->
+    </bean>
 </beans>

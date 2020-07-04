@@ -5,15 +5,15 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--单例-->
-<!--    <bean id="studentSing" class="entity.Student" scope="singleton">-->
-<!--        <property name="id" value="1"/>-->
-<!--        <property name="username" value="zhangsan"/>-->
-<!--    </bean>-->
+    <bean id="studentSing" class="entity.Student" scope="singleton">
+        <property name="id" value="1"/>
+        <property name="username" value="zhangsan"/>
+    </bean>
 
 
-<!--    &lt;!&ndash;多例&ndash;&gt;-->
-<!--     <bean id="studentPro" class="entity.Student" scope="prototype">-->
-<!--        <property name="id" value="1"/>-->
-<!--        <property name="username" value="lisi"/>-->
-<!--    </bean>-->
+    <!--多例-->
+     <bean id="studentPro" class="entity.Student" scope="prototype">
+        <property name="id" value="1"/>
+        <property name="username" value="lisi"/>
+    </bean>
 </beans>

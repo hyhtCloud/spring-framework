@@ -10,7 +10,6 @@ import org.aspectj.lang.ProceedingJoinPoint;
  */
 public class StudentServiceAspect {
 
-
     public void doBefore(JoinPoint jp){
         System.out.println("类名:"+jp.getTarget().getClass().getName());
         System.out.println("方法名："+jp.getSignature().getName());
